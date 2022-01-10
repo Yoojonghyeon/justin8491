@@ -1,10 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Microsoft</title>
+    <!-- <script src="styles/style.css"></script> -->
+    <style>
+      top-list {
+        display: flex;
+      }
+
+      top-list__left__menu-list {
+        display: flex;
+        flex-direction: row;
+      }
+
+      top-list__left__menu-list > li {
+        display: flex;
+        flex-direction: row;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <nav class="top-list">
+      <div class="top-list__left">
+        <h1><img src="./assets/imgs/Logo.jpg" alt="Logo" /></h1>
+        <ul class="top-list__left__menu-list">
+          <li class="top-list__left__menu-list__item">
+            <a href="#">Microsoft</a>
+          </li>
+          <li class="top-list__left__menu-list__item">
+            <a href="#">Office</a>
+          </li>
+          <li class="top-list__left__menu-list__item">
+            <a href="#">Windows</a>
+          </li>
+          <li class="top-list__left__menu-list__item">
+            <a href="#">Surface</a>
+          </li>
+          <li class="top-list__left__menu-list__item"><a href="#">Xbox</a></li>
+          <li class="top-list__left__menu-list__item"><a href="#">지원</a></li>
+        </ul>
+      </div>
+      <ul class="top-list__right">
+        <li class="top-list__right__item">
+          Microsoft 전체<img src="" alt="" />
+        </li>
+        <li class="top-list__right__item">검색<img src="" alt="" /></li>
+        <li class="top-list__right__item">카트<img src="" alt="" /></li>
+        <li class="top-list__right__item">로그인<img src="" alt="" /></li>
+      </ul>
+    </nav>
+  </body>
 </html>
