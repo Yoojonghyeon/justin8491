@@ -7,50 +7,164 @@
     <title>Microsoft</title>
     <!-- <script src="styles/style.css"></script> -->
     <style>
-      top-list {
+      a {
+        text-decoration: none;
+        color: black;
         display: flex;
       }
 
-      top-list__left__menu-list {
+      li {
+        list-style: none;
+      }
+
+      body {
+        margin-left: 70px;
+        margin-right: 70px;
+      }
+
+      h1 > img {
+        width: 150px;
+        height: 50px;
+      }
+
+      .top--list {
+        display: flex;
+        width: 100%;
+        align-items: center;
+      }
+
+      .top--list__left {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .top--list__left__menu--list {
+        display: flex;
+        flex-direction: row;
+      }
+      .top--list__left__menu--list > li {
+        padding-left: 15px;
+        padding-right: 15px;
+        border-style: none solid none none;
+        border-right-width: 1px;
+      }
+
+      .last--item {
+        border-style: none;
+      }
+
+      .top-list__left__menu-list {
+        display: flex;
+      }
+
+      .top--list__right {
         display: flex;
         flex-direction: row;
       }
 
-      top-list__left__menu-list > li {
+      .top--list__right > li {
         display: flex;
         flex-direction: row;
+        justify-content: flex-end;
+        margin-left: 40px;
+      }
+      .main--slied {
+        background-image: url(./assets/imgs/bg1.jpg);
+        width: 100%;
+        height: 500px;
+      }
+
+      .now--showping {
+        display: flex;
+        background-color: white;
+        text-decoration: none;
+        width: 120px;
+        height: 30px;
+        align-items: center;
+      }
+
+      .now--showping > img {
+        width: 15px;
+        height: 13px;
+      }
+
+      .icon {
+        width: 15px;
+        height: 10px;
+      }
+
+      .main--slied__container {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 100px;
       }
     </style>
   </head>
   <body>
-    <nav class="top-list">
-      <div class="top-list__left">
-        <h1><img src="./assets/imgs/Logo.jpg" alt="Logo" /></h1>
-        <ul class="top-list__left__menu-list">
-          <li class="top-list__left__menu-list__item">
+    <nav class="top--list">
+      <div class="top--list__left">
+        <h1><img class="Logo" src="./assets/imgs/Logo.jpg" alt="Logo" /></h1>
+        <ul class="top--list__left__menu--list">
+          <li class="top--list__left__menu--list__item">
             <a href="#">Microsoft</a>
           </li>
-          <li class="top-list__left__menu-list__item">
+          <li class="top--list__left__menu--list__item">
             <a href="#">Office</a>
           </li>
-          <li class="top-list__left__menu-list__item">
+          <li class="top--list__left__menu--list__item">
             <a href="#">Windows</a>
           </li>
-          <li class="top-list__left__menu-list__item">
+          <li class="top--list__left__menu--list__item">
             <a href="#">Surface</a>
           </li>
-          <li class="top-list__left__menu-list__item"><a href="#">Xbox</a></li>
-          <li class="top-list__left__menu-list__item"><a href="#">지원</a></li>
+          <li class="top--list__left__menu--list__item">
+            <a href="#">Xbox</a>
+          </li>
+          <li class="top--list__left__menu--list__item last--item">
+            <a href="#">지원</a>
+          </li>
         </ul>
       </div>
-      <ul class="top-list__right">
+      <ul class="top--list__right">
         <li class="top-list__right__item">
-          Microsoft 전체<img src="" alt="" />
+          Microsoft 전체<img
+            class="icon"
+            src="assets/icons/down-arrow.png"
+            alt=""
+          />
         </li>
-        <li class="top-list__right__item">검색<img src="" alt="" /></li>
-        <li class="top-list__right__item">카트<img src="" alt="" /></li>
-        <li class="top-list__right__item">로그인<img src="" alt="" /></li>
+        <li class="top--list__right__item">검색<img src="" alt="" /></li>
+        <li class="top--list__right__item">카트<img src="" alt="" /></li>
+        <li class="top--list__right__item last--item">
+          로그인<img src="" alt="" />
+        </li>
       </ul>
     </nav>
+    <main>
+      <section class="main--slied">
+        <div class="main--slied__container">
+          <h2>Surface Laptop 4</h2>
+          <p>
+            매끈한 초박형 디자인, 멀티태스킹의 속도, 향상된 성능으로 모든 요구
+            해결
+          </p>
+          <a class="now--showping" href="#"
+            >지금 쇼핑하기<img
+              class="icon"
+              src="./assets/icons/next.png"
+              alt=""
+          /></a>
+        </div>
+      </section>
+      <section></section>
+      <section></section>
+      <section></section>
+      <section></section>
+      <section></section>
+    </main>
   </body>
 </html>
