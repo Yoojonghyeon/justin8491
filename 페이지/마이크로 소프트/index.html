@@ -30,9 +30,10 @@
         justify-content: center;
       }
 
-      body {
-        margin-left: 70px;
-        margin-right: 70px;
+      .top--list,
+      main {
+        margin-left: 100px;
+        margin-right: 100px;
       }
 
       h1 > img {
@@ -42,7 +43,6 @@
 
       .top--list {
         display: flex;
-        width: 100%;
         justify-content: space-between;
         align-items: center;
       }
@@ -198,18 +198,106 @@
         margin-left: 100px;
       }
 
-      .going--menu2 {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 0px;
+      .going2 {
+        padding-top: 40px;
       }
 
-      .going--menu2__list {
+      .social {
+        display: flex;
+        flex-direction: row;
+        padding-bottom: 50px;
+      }
+
+      .social__list {
+        display: flex;
+        justify-content: center;
+      }
+
+      .social__list__link > img {
+        width: 28px;
+        height: 28px;
+      }
+
+      .social__list > span {
+        color: grey;
+      }
+
+      .social__list > span,
+      a {
+        margin-left: 15px;
+      }
+
+      .color--gray {
+        color: grey;
+      }
+
+      .footer--container {
+        background-color: #e2e2e2;
+        padding: 30px;
+      }
+
+      .footer--container__nav {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        padding: 0px;
+        width: 100%;
+      }
+
+      .footer--container__block {
+        display: flex;
+        flex-direction: column;
+        color: grey;
+      }
+
+      .footer--container__block > h3 {
+        margin-left: 55px;
+        font-size: 14px;
+      }
+
+      .footer--container__block__list > li {
+        margin-bottom: 10px;
+      }
+
+      .information {
+        display: flex;
+        justify-content: space-around;
+        padding: 20px;
+      }
+
+      .information__nationality {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: grey;
+        font-size: 13px;
+        margin-right: 500px;
+      }
+
+      .information__nationality > img {
+        width: 20px;
+        height: 24px;
+        align-items: center;
+        justify-content: center;
+        margin-right: 40px;
+      }
+
+      .information__info__list {
+        display: flex;
+        color: grey;
+        font-size: 13px;
+        margin-left: 300px;
+      }
+
+      .information__info__list__item {
+        padding-left: 10px;
+      }
+
+      .information__info__list__item > a,
+      h5 {
+        display: flex;
+        flex-direction: row;
+        color: grey;
+        justify-content: space-around;
       }
     </style>
   </head>
@@ -263,7 +351,7 @@
         </li>
       </ul>
     </nav>
-    <main>
+    <main class="main">
       <section class="main--slied">
         <!-- End -->
         <div class="main--slied__container">
@@ -286,7 +374,7 @@
         </div>
       </section>
       <!-- End -->
-      <section>
+      <section class="fast">
         <!-- End -->
         <nav class="fast--menu">
           <ul class="fast--menu__list">
@@ -322,7 +410,7 @@
         </nav>
       </section>
       <!-- End -->
-      <section>
+      <section class="going1">
         <!-- End -->
         <ul class="going--menu">
           <li class="going--menu__item">
@@ -409,13 +497,13 @@
         </div>
       </section>
       <!-- End -->
-      <section>
+      <section class="going2">
         <h2>비즈니스용</h2>
-        <div class="going--menu2">
-          <ul class="going--menu2__list">
-            <li class="going--menu2__list__item">
-              <img src="" alt="" />
-              <div class="going--menu2__list__item__size">
+        <div>
+          <ul class="going--menu">
+            <li class="going--menu__item">
+              <img src="assets/imgs/going2_1.jpg" alt="" />
+              <div class="going--menu__item__size">
                 <h2>Surface for Business</h2>
                 <p>어떤 일을 수행하든 Surface가 도와드립니다.</p>
                 <a href=""
@@ -426,9 +514,9 @@
                 /></a>
               </div>
             </li>
-            <li class="going--menu2__list_item">
-              <img src="" alt="" />
-              <div>
+            <li class="going--menu__item">
+              <img src="assets/imgs/going2_2.jpg" alt="" />
+              <div class="going--menu__item__size">
                 <h2>무료 Microsoft Teams 받기</h2>
                 <p>
                   온라인 회의, 채팅 및 공유 클라우드 저장소를 모두 한곳에서
@@ -442,9 +530,9 @@
                 /></a>
               </div>
             </li>
-            <li class="going--menu2__list_item">
-              <img src="" alt="" />
-              <div>
+            <li class="going--menu__item">
+              <img src="assets/imgs/going2_3.jpg" alt="" />
+              <div class="going--menu__item__size">
                 <h2>비즈니스용 Microsoft 365</h2>
                 <p>
                   생산성, 연결 및 보안을 위한 강력한 앱들을 통해 계속 한발
@@ -458,9 +546,9 @@
                 /></a>
               </div>
             </li>
-            <li class="going--menu2__list_item">
-              <img src="" alt="" />
-              <div>
+            <li class="going--menu__item">
+              <img src="assets/imgs/going2_4.jpg" alt="" />
+              <div class="going--menu__item__size">
                 <h2>Windows 365 클라우드 PC 시작</h2>
                 <p>
                   Microsoft 클라우드에서 모든 디바이스로 Windows 환경을 안전하게
@@ -477,7 +565,129 @@
           </ul>
         </div>
       </section>
-      <section></section>
+      <!-- End -->
+      <section class="social">
+        <div class="social__list">
+          <span>Microsoft 팔로우</span>
+          <a class="social__list__link" href=""
+            ><img src="assets/icons/facebook.png" alt="페이스북"
+          /></a>
+          <a class="social__list__link" href=""
+            ><img src="assets/icons/twitter.png" alt="트위터"
+          /></a>
+        </div>
+      </section>
     </main>
+    <footer class="footer--container">
+      <nav class="footer--container__nav">
+        <div class="footer--container__block">
+          <h3>새로운 기능</h3>
+          <ul class="footer--container__block__list">
+            <li><a class="color--gray" href="#">Microsoft 365</a></li>
+            <li><a class="color--gray" href="#">Surface Pro X</a></li>
+            <li><a class="color--gray" href="#">Surface Pro 7</a></li>
+            <li><a class="color--gray" href="#">Surface Laptop 3</a></li>
+            <li><a class="color--gray" href="#">Surface Go</a></li>
+            <li><a class="color--gray" href="#">Windows 11 앱(238K)</a></li>
+          </ul>
+        </div>
+        <div class="footer--container__block">
+          <h3>Microsoft Store</h3>
+          <ul class="footer--container__block__list">
+            <li><a class="color--gray" href="#">계정 프로필</a></li>
+            <li><a class="color--gray" href="#">다운로드 센터</a></li>
+            <li><a class="color--gray" href="#">Microsoft Store 지원</a></li>
+            <li><a class="color--gray" href="#">반품/환불</a></li>
+            <li><a class="color--gray" href="#">주문 추적</a></li>
+          </ul>
+        </div>
+        <div class="footer--container__block">
+          <h3>교육</h3>
+          <ul class="footer--container__block__list">
+            <li><a class="color--gray" href="#">교육 분야의 Microsoft</a></li>
+            <li><a class="color--gray" href="#">학생용 Office</a></li>
+            <li><a class="color--gray" href="#">학교용 Office 365</a></li>
+            <li>
+              <a class="color--gray" href="#">학생 및 학부모용 특가 혜택</a>
+            </li>
+            <li>
+              <a class="color--gray" href="#">교육 분야의 Microsoft Azure</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer--container__block">
+          <h3>대기업</h3>
+          <ul class="footer--container__block__list">
+            <li><a class="color--gray" href="#">Azure</a></li>
+            <li><a class="color--gray" href="#">AppSource</a></li>
+            <li><a class="color--gray" href="#">자동차</a></li>
+            <li><a class="color--gray" href="#">정부 기관</a></li>
+            <li><a class="color--gray" href="#">의료 서비스</a></li>
+            <li><a class="color--gray" href="#">제조업</a></li>
+            <li><a class="color--gray" href="#">금융 서비스</a></li>
+            <li><a class="color--gray" href="#">소매</a></li>
+          </ul>
+        </div>
+        <div class="footer--container__block">
+          <h3>개발자</h3>
+          <ul class="footer--container__block__list">
+            <li><a class="color--gray" href="#">Microsoft Visual Studio</a></li>
+            <li><a class="color--gray" href="#">Windows 개발자 센터</a></li>
+            <li><a class="color--gray" href="#">개발자 센터</a></li>
+            <li>
+              <a class="color--gray" href="#">Microsoft 개발자 프로그램</a>
+            </li>
+            <li><a class="color--gray" href="#">채널 9</a></li>
+            <li>
+              <a class="color--gray" href="#">Microsoft 365 Dev Center</a>
+            </li>
+            <li>
+              <a class="color--gray" href="#"
+                >Microsoft 365 Developer Program</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="footer--container__block">
+          <h3>회사</h3>
+          <ul class="footer--container__block__list">
+            <li><a class="color--gray" href="#">채용 정보</a></li>
+            <li><a class="color--gray" href="#">Microsoft 정보</a></li>
+            <li><a class="color--gray" href="#">회사 뉴스</a></li>
+            <li>
+              <a class="color--gray" href="#">Microsoft 개인 정보 보호</a>
+            </li>
+            <li><a class="color--gray" href="#">투자자</a></li>
+            <li><a class="color--gray" href="#">보안</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="information">
+        <div class="information__nationality">
+          <img src="assets/icons/earth.png" alt="" />
+          <p>한국어(대한민국)</p>
+        </div>
+        <div class="information__info">
+          <ul class="information__info__list">
+            <li class="information__info__list__item">
+              <a href="">Microsoft에 문의</a>
+            </li>
+            <li class="information__info__list__item">
+              <a class="information__info__list__item" href=""
+                >개인정보처리방침 및 위치정보이용약관</a
+              >
+            </li>
+            <li class="information__info__list__item">
+              <a href="">사용약관</a>
+            </li>
+            <li class="information__info__list__item"><a href="">상표</a></li>
+            <li class="information__info__list__item">
+              <a href=""> 광고 정보</a>
+            </li>
+            <li class="information__info__list__item">© Microsoft 2022</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
