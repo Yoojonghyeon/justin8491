@@ -1,0 +1,328 @@
+/* 
+  [Common]
+  1. BEM 규칙이 [부모클래스명]__[자식클리스명]
+    ex)
+    <nav class="top-list">
+      <h2 class="top-list__title>마이크로소프트<h2/>
+    </nav>
+
+  2. BEM에 의한것이 아닌 일반적인 이름을 지을때 단어끼리 구분은 `-` 하나로!
+    ex)
+    class='top--list' X
+    class='top-list' O
+
+    '--' 두개의 의미는 같은 클래스를 가지는 애들중에 속성이 다를때 나타내는것!
+    ex)
+    1. class='top-list__title'
+    2. class='top-list__title--white' => title과 같은 css 속성을 가지지만 예를들어 글자색만 하얀색으로 변경한 클래스를 생성할때
+
+    <위의 css 작성 예시>
+    .top-list__title {
+      font-size: 32px;
+      font-weight: bold;
+      margin: 10px;
+    }
+    .top-list__title--white {
+      font-size: 32px;
+      font-weight: bold;
+      margin: 10px;
+      color: white;
+    }
+*/
+
+a {
+  text-decoration: none;
+  color: black;
+  display: flex;
+}
+
+li {
+  list-style: none;
+}
+
+.icon {
+  width: 20px;
+  height: 15px;
+}
+
+.icon2 {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.top-list,
+main {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+/* 하위 태그를 선택해야 하는건 class 아래나 id 아래로 지정해야해 혹시라도 
+   다른곳에서 h1 밑에 img를 사용하면 해당 스타일이 먹혀서 위험해 */
+h1 > img {
+  width: 150px;
+  height: 50px;
+}
+
+.top-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-list__left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* 해당 부분을보면 top-list__left 아래에 ul은 하나지? 이럴때는 굳이 class명보다는 ul로 고쳐줘도 되 */
+/*  */
+.top-list__left__menu-list {
+  display: flex;
+  flex-direction: row;
+}
+.top-list__left__menu-list > li {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.last-item {
+  border-style: none;
+}
+
+.top-ist__left__menu-list {
+  display: flex;
+}
+
+.top-list__right {
+  display: flex;
+  flex-direction: row;
+}
+
+.top-list__right > li {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-left: 40px;
+}
+
+.center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.main-slied {
+  background-image: url(./assets/imgs/bg1.jpg);
+  width: 100%;
+  height: 500px;
+}
+
+.now-showping {
+  display: flex;
+  background-color: white;
+  text-decoration: none;
+  width: 120px;
+  height: 30px;
+  align-items: center;
+}
+
+.now-showping > img {
+  width: 15px;
+  height: 13px;
+}
+
+.main-slied__container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 100px;
+}
+
+.main-slied__container__swich {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.main-slied__container__swich > img {
+  display: flex;
+  margin-left: 10px;
+}
+
+.fast-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 100px;
+  padding: 100px;
+}
+
+.fast-menu__list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.fast-menu__list > li {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-left: 50px;
+}
+
+.fast-menu__list__item > a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 180px;
+}
+
+.fast-menu__list__item__link > p {
+  width: 125px;
+  text-align: center;
+}
+
+.going-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px;
+}
+
+.going-menu__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.going-menu__item__size {
+  width: 360px;
+  height: 200px;
+}
+
+.going-menu__item > img {
+  width: 100%;
+}
+
+.sub-main {
+  background-image: url(assets/imgs/bg2.jpg);
+  height: 500px;
+}
+
+.sub-main__container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 100px;
+}
+
+.going2 {
+  padding-top: 40px;
+}
+
+.social {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 50px;
+}
+
+.social__list {
+  display: flex;
+  justify-content: center;
+}
+
+.social__list__link > img {
+  width: 28px;
+  height: 28px;
+}
+
+.social__list > span {
+  color: grey;
+}
+
+.social__list > span,
+a {
+  margin-left: 15px;
+}
+
+.color-gray {
+  color: grey;
+}
+
+.footer-container {
+  background-color: #e2e2e2;
+  padding: 30px;
+}
+
+.footer-container__nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footer-container__block {
+  display: flex;
+  flex-direction: column;
+  color: grey;
+}
+
+.footer-container__block > h3 {
+  margin-left: 55px;
+  font-size: 14px;
+}
+
+.footer-container__block__list > li {
+  margin-bottom: 10px;
+}
+
+.information {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.information__nationality {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: grey;
+  font-size: 13px;
+  margin-right: 500px;
+}
+
+.information__nationality > img {
+  width: 20px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  margin-right: 40px;
+}
+
+.information__info__list {
+  display: flex;
+  color: grey;
+  font-size: 13px;
+  margin-left: 300px;
+}
+
+.information__info__list__item {
+  padding-left: 10px;
+}
+
+.information__info__list__item > a,
+h5 {
+  display: flex;
+  flex-direction: row;
+  color: grey;
+  justify-content: space-around;
+}

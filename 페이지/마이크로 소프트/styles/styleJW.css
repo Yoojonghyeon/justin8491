@@ -1,0 +1,92 @@
+/* css 작성시 같은 섹션안에 있는 css는 모아주기 */
+/* 또한 부모 -> 자식 순으로 스타일링 */
+
+/* 가장 위에 초기화 css */
+* {
+  margin: 0;
+  padding: 0;
+  /* 해당 속성 무엇인지 알아보기! */
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+/* nav */
+.top-list {
+  display: flex;
+  flex-direction: row;
+  /* 이게 뭔지 알아보기 그리고 flex쓸때 같이 써주기 */
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  /* margin 말고 padding 사용할것 */
+  padding: 0 100px;
+}
+
+/* padding 으로 사용하면 backgoround-image 줄때 padding 상관없이 영역을 먹어 */
+/* 이렇게 하면 
+nav, main, footer {
+  padding: 0 100px;
+}
+공통으로 사용가능 !
+*/
+
+.top-list__left {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+/* 
+  class명 class명 {}
+  class명 > class명 {}
+  두개 차이 알아보기
+ */
+/* 
+  그리고 class명을 다 주라고 했지만 이제 부터 class안줘도 되는건 뺄게!
+  그 기준은 section 안에 영역을 담당하는 태그가 공통되냐 안되냐 차이야(ex ul이 두개냐? header가 두개냐 등)
+ */
+.top-list__left > h1 {
+  width: 150px;
+  margin-right: 10px;
+}
+.top-list__left > h1 > img {
+  width: 100%;
+}
+.top-list__left > ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.top-list__left > ul > li {
+  margin: 0 10px;
+}
+
+.top-list__left > ul > li > a {
+  color: black;
+  /* em, rem , % 단위가 무엇인지 알아보기 */
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* 
+  flex-direction, flex-wrap 속성이 무엇인지 어느정도 감이 잡히면
+  두개는 생략해도 괜찮음(생략한다 === flex를 선언하는 순간 default로 적용되는 값이 있다)
+  default값이 무엇인지 알아보고 생략할때랑 안할때 구분하기!
+ */
+.top-list__right {
+  display: flex;
+  align-items: center;
+}
+.top-list__right > li {
+  margin: 0 10px;
+  /*  */
+  display: flex;
+  align-items: center;
+}
