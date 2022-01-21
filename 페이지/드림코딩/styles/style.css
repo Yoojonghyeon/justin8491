@@ -1,0 +1,73 @@
+/* 초기화 css */
+* {
+  margin: 0;
+  padding: 0;
+  /* 해당 속성 무엇인지 알아보기! */
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+.white-color {
+  color: white;
+}
+
+/***********************************/
+.top-list {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.top-list__menu {
+  display: flex;
+}
+
+.top-list__menu > li {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding-left: 30px;
+}
+
+.background-black {
+  background-image: url(../assets/imgs/bg1.jpg);
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  padding-left: 20%;
+}
+
+.background-black > h2 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  font-size: 70px;
+  padding-bottom: 15px;
+}
+
+.background-black > p {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding-bottom: 30px;
+}
+
+.background-black > a {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 220px;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff4e5e;
+  border-radius: 50px;
+  padding: 10px;
+  font-size: 17px;
+}
