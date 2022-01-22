@@ -12,14 +12,30 @@ a {
   text-decoration: none;
 }
 
-.white-color {
+body {
+  padding-top: 100px;
+}
+
+.color-white {
   color: white;
+}
+
+.color-pink {
+  color: #ff4e5e;
+}
+
+i {
+  color: #ff4e5e;
 }
 
 /***********************************/
 .top-list {
+  position: fixed;
+  top: 0;
+  width: 100%;
   display: flex;
   justify-content: space-evenly;
+  background-color: white;
 }
 
 .top-list__menu {
@@ -34,14 +50,18 @@ a {
   padding-left: 30px;
 }
 
+.top-list__menu > li > a:hover {
+  color: black;
+}
+
 .background-black {
   background-image: url(../assets/imgs/bg1.jpg);
-  height: 300px;
+  height: 350px;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
-  padding-left: 20%;
+  padding-left: 25%;
 }
 
 .background-black > h2 {
@@ -70,4 +90,96 @@ a {
   border-radius: 50px;
   padding: 10px;
   font-size: 17px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  font-size: 2em;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+}
+
+.header > h3 {
+  margin-bottom: 8px;
+}
+
+.header > h4 {
+  margin-bottom: 24px;
+}
+
+.introduction {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.introduction > li {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 430px;
+  padding: 50px;
+}
+
+.introduction > li > i {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.introduction > li > h4 {
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.introduction > li > p {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.pront1 {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  padding: 50px;
+}
+
+.pront1 > li {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 400px;
+  height: 400px;
+  padding: 30px;
+  margin: 40px;
+  background-color: #e2e2e2;
+}
+
+.pront1 > li > img {
+  width: 100%;
+  height: 200px;
+}
+
+.pront1 > li > div > span {
+  font-size: 18px;
+}
+
+.pront1__item__review-card > p {
+  color: gray;
+  margin-bottom: 15px;
+}
+
+.pront1__item__review-card > div {
+  margin: 15px 0 15px 0;
+}
+
+.pront1__item__review-card > div > span {
+  color: gray;
 }

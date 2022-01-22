@@ -5,7 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dream Coding</title>
+    <!-- CSS -->
     <link rel="stylesheet" href="./styles/style.css" />
+    <!-- Font Awesome CDN -->
+    <script
+      src="https://kit.fontawesome.com/d350cb3dc1.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <nav class="top-list">
@@ -13,32 +19,46 @@
         <img src="assets/imgs/logo.jpg" alt="로고" />
       </h1>
       <ul class="top-list__menu">
-        <li class="top-list__menu__item">테스트 강의 공지🔥</li>
-        <li class="top-list__menu__item">취업 이야기</li>
-        <li class="top-list__menu__item">로드맵</li>
-        <li class="top-list__menu__item">커뮤니티</li>
-        <li class="top-list__menu__item">연락 문의</li>
-        <li class="top-list__menu__item">수강생 리뷰들</li>
-        <li class="top-list__menu__item">SIGN IN</li>
+        <li class="top-list__menu__item">
+          <a class="color-pink" href="#">테스트 강의 공지🔥</a>
+        </li>
+        <li class="top-list__menu__item">
+          <a class="color-pink" href="#">취업 이야기</a>
+        </li>
+        <li class="top-list__menu__item">
+          <a class="color-pink" href="#">로드맵</a>
+        </li>
+        <li class="top-list__menu__item">
+          <a class="color-pink" href="#">커뮤니티</a>
+        </li>
+        <li class="top-list__menu__item">
+          <a class="color-pink" href="#">연락 문의</a>
+        </li>
+        <li class="top-list__menu__item">
+          <a class="color-pink" href="#">수강생 리뷰들</a>
+        </li>
+        <li class="top-list__menu__item">
+          <a class="color-pink" href="#">SIGN IN</a>
+        </li>
       </ul>
     </nav>
     <main>
       <section class="background-black">
-        <h2 class="white-color">Code your dream</h2>
-        <p class="white-color">
+        <h2 class="color-white">Code your dream</h2>
+        <p class="color-white">
           여러분의 멋진 꿈을 드림코딩에서 엘리와 함께 코딩해 나가세요.
         </p>
-        <a class="white-color" href="#">드림코딩과 함께 하기</a>
+        <a class="color-white" href="#">드림코딩과 함께 하기</a>
       </section>
       <section>
-        <div>
+        <div class="header">
           <h3>대체 불가능한 개발자 되기🚀</h3>
           <h4>진정한 개발자로 성장해 나가는 곳, 드림코딩</h4>
         </div>
         <div>
           <ul class="introduction">
             <li class="introduction__item">
-              <i class="fa fa-asterisk" aria-hidden="true"></i>
+              <i class="fa fa-asterisk color-pink fa-2x" aria-hidden="true"></i>
               <h4>물고기 잡는 법을 알려 드려요🎣</h4>
               <p>
                 단순 따라치기 식의 강의 지치셨나요? 원리도, 개념도 잡히지 않은
@@ -49,7 +69,10 @@
               </p>
             </li>
             <li class="introduction__item">
-              <img src="" alt="" />
+              <i
+                class="fa fa-area-chart color-pink fa-2x"
+                aria-hidden="true"
+              ></i>
               <h4>문제해결 능력 키우기</h4>
               <p>
                 개발자에게 있어서 정말 중요한 스킬 ❛명쾌한 문제 정의와 문제 해결
@@ -59,7 +82,10 @@
               </p>
             </li>
             <li class="introduction__item">
-              <img src="" alt="" />
+              <i
+                class="fa fa-lightbulb-o color-pink fa-2x"
+                aria-hidden="true"
+              ></i>
               <h4>현업에서의 노하우를 가득 담아</h4>
               <p>
                 협업에서의 깊은 경력 없이 단순 만들기식의 프로젝트로 진행하는
@@ -72,50 +98,89 @@
         </div>
       </section>
       <section>
-        <div>
+        <div class="header">
           <h3>프론트엔드 필수 기본 완성편</h3>
           <h4>
-            실전을 통해 기본기를 완성하고 다음 레벨을 향한 자신감을 향상 해요✨<!--이미지 -->
+            실전을 통해 기본기를 완성하고 다음 레벨을 향한 자신감을 향상 해요✨
           </h4>
         </div>
         <div>
           <ul class="pront1">
             <li class="pront1__item">
-              <p>All Courses, 프론트엔드 기본</p>
-              <h4>포트폴리오 웹사이트 클론코딩</h4>
-              <!-- 아이콘 -->
-              <!-- 이미지 -->
+              <div class="pront1__item__review-card">
+                <p>All Courses, 프론트엔드 기본</p>
+                <span>포트폴리오 웹사이트 클론코딩</span>
+                <div>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <span>(278)</span>
+                </div>
+              </div>
+              <img src="./assets/imgs/pront1.jpg" alt="" />
             </li>
             <li class="pront1__item">
-              <p>All Courses, 프론트엔드 기본</p>
-              <h4>
-                프론트엔드 필수 브라우저 101 (자바스크립트 마스터 | 디버깅, 성능
-                분석, 실전 프로젝트 10개)
-              </h4>
-              <!-- 아이콘 -->
-              <!-- 이미지 -->
+              <div class="pront1__item__review-card">
+                <p>All Courses, 프론트엔드 기본</p>
+                <span>
+                  프론트엔드 필수 브라우저 101 (자바스크립트 마스터 | 디버깅,
+                  성능 분석, 실전 프로젝트 10개)
+                </span>
+                <div>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <span>(307)</span>
+                </div>
+              </div>
+              <img src="./assets/imgs/pront2.jpg" alt="" />
             </li>
             <li class="pront1__item">
-              <p>All Courses, 프론트엔드 기본</p>
-              <h4>쇼핑몰 미니게임 클론코딩 & 코드 리뷰</h4>
-              <!-- 아이콘 -->
-              <!-- 이미지 -->
+              <div class="pront1__item__review-card">
+                <p>All Courses, 프론트엔드 기본</p>
+                <span>쇼핑몰 미니게임 클론코딩 & 코드 리뷰</span>
+                <div>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <span>(94)</span>
+                </div>
+              </div>
+              <img src="./assets/imgs/pront3.jpg" alt="" />
             </li>
           </ul>
         </div>
       </section>
       <section>
-        <div>
+        <div class="header">
           <h3>프론트엔드 중급 레벨 (연봉 인상 가즈아 🚀)</h3>
           <h4>현업에서 많이 쓰이는 스택을 하나씩 점령해요</h4>
         </div>
         <div>
           <ul class="pront2">
             <li class="pront2__item">
-              <p>All Courses, 프론트엔드 중급</p>
-              <h4>리액트 개념 정리 + 유튜브 클론 코딩 외 실전 프로젝트 완성</h4>
-              <!-- 아이콘 -->
-              <!-- 이미지 -->
+              <div class="pront2__item__review-card">
+                <p>All Courses, 프론트엔드 중급</p>
+                <h4>
+                  리액트 개념 정리 + 유튜브 클론 코딩 외 실전 프로젝트 완성
+                </h4>
+                <div>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <span>(307)</span>
+                </div>
+              </div>
+
+              <img src="" alt="" />
             </li>
             <li class="pront2__item">
               <p>All Courses, 프론트엔드 중급</p>
@@ -136,7 +201,7 @@
         </div>
       </section>
       <section>
-        <div>
+        <div class="header">
           <h3>백엔드 입문 과정</h3>
           <h4>나의 역량을 키우기, 풀스택을 향하여 🚀</h4>
         </div>
@@ -163,7 +228,7 @@
         </div>
       </section>
       <section>
-        <div>
+        <div class="header">
           <h3>모든 개발자 기본 소양 강의</h3>
           <h4>나의 토양을 탄탄하게 만들어줄 영양분들 🌱</h4>
         </div>
@@ -185,8 +250,8 @@
         </div>
       </section>
       <section>
-        <header>
-          <h2>수강생 후기들✨</h2>
+        <header class="header">
+          <h3>수강생 후기들✨</h3>
         </header>
         <div class="reviewer1">
           <ul class="reviewer1__list">
