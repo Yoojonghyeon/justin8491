@@ -6,3 +6,4 @@ const integer = 20;
 integer = 30;
 
 정리;
+1
