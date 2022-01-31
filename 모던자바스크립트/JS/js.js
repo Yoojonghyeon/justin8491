@@ -28,14 +28,140 @@
 //if를 ? 로 교체하기
 // let result = a + b < 4 ? "미만" : "이상";
 // if else 를 ? 로 교체하기
-let login = prompt("직함입력");
-let message =
-  login == "직원"
-    ? "안녕하세요"
-    : login == "임원"
-    ? "환영합니다."
-    : login == ""
-    ? "로그인이 필요합니다."
-    : "";
+// let login = prompt("직함입력");
+// let message =
+//   login == "직원"
+//     ? "안녕하세요"
+//     : login == "임원"
+//     ? "환영합니다."
+//     : login == ""
+//     ? "로그인이 필요합니다."
+//     : "";
 
-alert(message);
+// alert(message);
+//사이 범위 확인하기
+// let age = prompt("나이");
+// if (age >= 14 && age <= 90) {
+//   alert("나이에 속합니다.");
+// } else {
+//   alert("나이에 속하지 않습니다.");
+// }
+// 바깥 범위 확인하기
+// let age = prompt("나이");
+// if (!(age >= 14 && age <= 90)) {
+//   alert("나이에 속하지 않습니다.");
+// } else {
+//   alert("나이에 속합니다.");
+// }
+//로그인 구현
+// let login = prompt("아이디를 입력해주세요");
+
+// if (login == "Admin") {
+//   let password = prompt("비밀번호를 입력해주세요.");
+//   if (password == "TheMaster") {
+//     alert("환영합니다.");
+//   } else if (password != "TheMaster") {
+//     alert("인증에 실패하였습니다.");
+//   } else if (password == "") {
+//     alert("취소되었습니다.");
+//   }
+// } else if (login == "" || login != "Admin") {
+//   alert("취소되었습니다.");
+// }
+//for 반복문을 이용하여 짝수 출력하기
+// for (let i = 2; i <= 10; i++) {
+//   if (i % 2 != 0) continue;
+//   alert(i);
+// }
+//for 반복문을 while 반복문으로 바꾸기
+// let i = 0;
+// while (i < 3) {
+//   alert(`number ${i} !`);
+//   i++;
+// }
+
+//사용자가 유효한 값을 입력할 때까지 프롬프트 창 띄우기
+// let num;
+
+// do {
+//   num = prompt("100보다 큰 숫자를 입력해 주세요.", 0);
+// } while (num <= 100 && num);
+
+//소수 출력하기
+// let num = prompt(`까지의정수`);
+
+// nextPrime: for (let i = 2; i < num; i++) {
+//   for (let j = 2; j < i; j++) {
+//     if (i % j == 0) continue nextPrime;
+//   }
+//   alert(i);
+// }
+
+//switch 문을 if문으로 변환하기
+
+// let browser = prompt("어떤브라우저를 사용하고있나요?");
+
+// if (browser == "Opera") {
+//   alert("저희 서비스가 지원하는 브라우저를 사용하고 계시네요.");
+// } else if (browser == "Edge") {
+//   alert("Edge를 사용하고 계시네요!");
+// } else {
+//   alert("현재 페이지가 괜찮아 보이길 바랍니다!");
+// }
+
+// let a = prompt("a?");
+
+// switch (a) {
+//   case "0":
+//     alert(0);
+//     break;
+//   case "1":
+//     alert(1);
+//     break;
+//   case "2":
+//   case "3":
+//     alert("2,3");
+//     break;
+// }
+// min(a,b) 함수 만들기 작은 값 반환 함수
+// function min(num1, num2) {
+//   if (num1 > num2) {
+//     return num2;
+//   } else {
+//     return num1;
+//   }
+// }
+// min(2, 5);
+// min(3, -1);
+// min(1, 1);
+
+//pow(x,n) 함수 만들기
+// function pow(x, n) {
+//   // 2, 5
+//   let sum = x;
+//   for (let i = 1; i < n; i++) {
+//     sum *= x;
+//   }
+//   return sum;
+// }
+
+// x = prompt("정수 값");
+// n = prompt("제곱근 값");
+
+// if (n < 1) {
+//   alert(`${n}은 양의 정수이어야 합니다.`);
+// } else {
+//   alert(pow(x, n));
+// }
+// let sayHi = () => alert("안녕하세요!");
+// sayHi();
+
+//화살표 함수로 변경하기
+
+let ask = (question, yes, no) => (confirm(qyestion) ? yes() : no());
+
+ask(
+  "동의 하십니까?",
+  () => alert("동의하셨습니다."),
+  () => alert("취소 버튼을 누르셨습니다.")
+);
