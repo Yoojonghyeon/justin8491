@@ -158,10 +158,115 @@
 
 //화살표 함수로 변경하기
 
-let ask = (question, yes, no) => (confirm(qyestion) ? yes() : no());
+// let ask = (question, yes, no) => (confirm(qyestion) ? yes() : no());
 
-ask(
-  "동의 하십니까?",
-  () => alert("동의하셨습니다."),
-  () => alert("취소 버튼을 누르셨습니다.")
-);
+// ask(
+//   "동의 하십니까?",
+//   () => alert("동의하셨습니다."),
+//   () => alert("취소 버튼을 누르셨습니다.")
+// );
+
+// let user = {};
+// user.name = "John";
+// user.surname = "Smith";
+// user.name = "Pete";
+// delete user.name;
+
+// function isEmpty(obj) {
+//   for (let key in obj) {
+//     return false;
+//   }
+//   return true;
+// }
+
+// let sum = 0;
+// let salaries = {
+//   John: 100,
+//   Ann: 160,
+//   Pete: 130,
+// };
+
+// for (let key in salaries) {
+//   sum += salaries[key];
+// }
+// alert(sum);
+
+// 함수 호출 전
+// let menu = {
+//   width: 200,
+//   height: 300,
+//   title: "My menu",
+// };
+
+// function multiplyNumeric(obj) {
+//   for (let key in obj) {
+//     if (typeof obj[key] == "Number") {
+//       obj[key] *= 2;
+//     }
+//   }
+// }
+
+// multiplyNumeric(menu);
+
+// x = 10;
+
+// y = x;
+
+// x = 5;
+
+// alert("x는 ?" + x);
+// alert("y는 ?" + y);
+//계산기 만들기
+// let calculator = {
+//   sum() {
+//     return (sum = this.num1 + this.num2);
+//   },
+
+//   mul() {
+//     return (mul = this.num1 * this.num2);
+//   },
+
+//   read() {
+//     this.num1 = +prompt("첫 번째 값은?", 0);
+//     this.num2 = +prompt("두 번째 값은?", 0);
+//   },
+// };
+
+// calculator.read();
+// alert(calculator.sum());
+// alert(calculator.mul());
+
+let ladder = {
+  step: 0,
+  up() {
+    this.step++;
+    return this;
+  },
+  down() {
+    this.step--;
+    return this;
+  },
+  showStep: function () {
+    // 사다리에서 몇 번째 단에 올라와 있는지 보여줌
+    alert(this.step);
+    return this;
+  },
+};
+
+ladder
+  .up()
+  .up()
+  .down()
+  .up()
+  .up()
+  .down()
+  .up()
+  .up()
+  .up()
+  .up()
+  .up()
+  .up()
+  .up()
+  .up()
+  .up()
+  .showStep();
