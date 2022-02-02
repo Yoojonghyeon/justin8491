@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+}
+
+.rectangle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  background-color: blueviolet;
+  animation-name: title_ani; /*실행할 애니메이션*/
+  animation-duration: 3s; /* 몇초간격으로 실행하는지 */
+  animation-fill-mode: forwards;
+}
+
+@keyframes title_ani {
+  from {
+    margin-left: 0px;
+  }
+  to {
+    margin-left: 50%;
+    margin-top: 30%;
+    width: 400px;
+    height: 200px;
+  }
+}
