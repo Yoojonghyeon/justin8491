@@ -236,37 +236,50 @@
 // alert(calculator.sum());
 // alert(calculator.mul());
 
-let ladder = {
-  step: 0,
-  up() {
-    this.step++;
-    return this;
-  },
-  down() {
-    this.step--;
-    return this;
-  },
-  showStep: function () {
-    // 사다리에서 몇 번째 단에 올라와 있는지 보여줌
-    alert(this.step);
-    return this;
-  },
-};
+// let ladder = {
+//   step: 0,
+//   up() {
+//     this.step++;
+//     return this;
+//   },
+//   down() {
+//     this.step--;
+//     return this;
+//   },
+//   showStep: function () {
+//     // 사다리에서 몇 번째 단에 올라와 있는지 보여줌
+//     alert(this.step);
+//     return this;
+//   },
+// };
 
-ladder
-  .up()
-  .up()
-  .down()
-  .up()
-  .up()
-  .down()
-  .up()
-  .up()
-  .up()
-  .up()
-  .up()
-  .up()
-  .up()
-  .up()
-  .up()
-  .showStep();
+// ladder
+//   .up()
+//   .up()
+//   .down()
+//   .up()
+//   .up()
+//   .down()
+//   .up()
+//   .up()
+//   .up()
+//   .up()
+//   .up()
+//   .up()
+//   .up()
+//   .up()
+//   .up()
+//   .showStep();
+// function User(name, isadmin) {
+//   this.name = name;
+//   this.isAdmin = isadmin;
+// }
+
+// let user = new User("보라", "admin");
+
+// alert(user.name); // 보라
+// alert(user.isAdmin);
+
+//6.35.toFixed(1) == 6.3인 이유는 무엇일까요?
+let num = 6.35;
+alert(Math.round(num * 10) / 10);
