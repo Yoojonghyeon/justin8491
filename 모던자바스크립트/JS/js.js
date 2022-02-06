@@ -281,5 +281,29 @@
 // alert(user.isAdmin);
 
 //6.35.toFixed(1) == 6.3인 이유는 무엇일까요?
-let num = 6.35;
-alert(Math.round(num * 10) / 10);
+// let num = 6.35;
+// alert(Math.round(num * 10) / 10);
+
+// function readNumber() {
+//   let num;
+//   do {
+//     num = +prompt("숫자를 입력하세요.");
+//   } while (!isFinite(num));
+//   if (num == null || num == "") {
+//     alert(null);
+//   }
+//   return +num;
+// }
+
+// alert(`값은 : ${readNumber()}`);
+
+let styles = ["Jazz", "Blues"];
+alert(styles);
+styles.push("Rock-n-Roll");
+alert(styles);
+styles[1] = "Classics";
+alert(styles);
+styles.shift();
+alert(styles);
+styles.unshift("Rap", "Reggae");
+alert(styles);
