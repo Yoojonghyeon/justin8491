@@ -297,14 +297,14 @@
 
 // alert(`값은 : ${readNumber()}`);
 
-let styles = ["Jazz", "Blues"];
-alert(styles);
-styles.push("Rock-n-Roll");
-alert(styles);
-styles[1] = "Classics";
-alert(styles);
-styles.shift();
-alert(styles);
-styles.unshift("Rap", "Reggae");
-alert(styles);
-에잉;
+// let styles = ["Jazz", "Blues"];
+// alert(styles);
+// styles.push("Rock-n-Roll");
+// alert(styles);
+// styles[1] = "Classics";
+// alert(styles);
+// styles.shift();
+// alert(styles);
+// styles.unshift("Rap", "Reggae");
+// alert(styles);
+// 에잉;
