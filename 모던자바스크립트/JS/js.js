@@ -307,4 +307,14 @@
 // alert(styles);
 // styles.unshift("Rap", "Reggae");
 // alert(styles);
-// 에잉;
+
+let calculator = {
+  day1: 1,
+  day2: 2,
+  day4: 4,
+};
+let doubleCalculator = Object.fromEntries(
+  Object.entries(calculator).map(([key, value]) => [key, value * 2])
+);
+
+alert(doubleCalculator.day4); // 8
