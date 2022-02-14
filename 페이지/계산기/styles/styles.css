@@ -1,0 +1,75 @@
+/* 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+i {
+  color: rgb(59, 57, 57);
+  width: 32px;
+  height: 32px;
+}
+
+button {
+  font-size: 32px;
+}
+
+/* 배경 */
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  height: 600px;
+  background-color: darkgreen;
+}
+
+.calculator__display {
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: chocolate;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.calBtn {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.calBtn > div {
+  padding: 17.5px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.calBtn > div > button {
+  width: 64px;
+  height: 64px;
+}
+
+.equal {
+  width: 64px;
+  height: 128px;
+}

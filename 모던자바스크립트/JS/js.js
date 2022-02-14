@@ -308,13 +308,39 @@
 // styles.unshift("Rap", "Reggae");
 // alert(styles);
 
-let calculator = {
-  day1: 1,
-  day2: 2,
-  day4: 4,
-};
-let doubleCalculator = Object.fromEntries(
-  Object.entries(calculator).map(([key, value]) => [key, value * 2])
-);
+// let calculator = {
+//   day1: 1,
+//   day2: 2,
+//   day4: 4,
+// };
+// let doubleCalculator = Object.fromEntries(
+//   Object.entries(calculator).map(([key, value]) => [key, value * 2])
+// );
 
-alert(doubleCalculator.day4); // 8
+// alert(doubleCalculator.day4); // 8
+// let salaries = {
+//   John: 100,
+//   Pete: 300,
+//   Mary: 250,
+// };
+
+// function sumSalaries(salaries) {
+//   let sum = 0;
+//   for (let salary of Object.values(salaries)) {
+//     sum += salary;
+//   }
+//   return sum;
+// }
+
+// alert(sumSalaries(salaries)); // 650
+
+let user = {
+  name: "John",
+  age: 30,
+};
+
+function count(obj) {
+  return Object.keys(obj).length;
+}
+
+alert(count(user)); // 2
