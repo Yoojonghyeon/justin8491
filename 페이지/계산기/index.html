@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JavaScript 계산기</title>
     <link rel="stylesheet" href="./styles/styles.css" />
-    <script src="JS/javaScript.js"></script>
+
     <!-- Font Awesome Kit -->
     <script
       src="https://kit.fontawesome.com/d350cb3dc1.js"
@@ -14,54 +14,40 @@
     ></script>
   </head>
   <body>
-    <section class="main">
+    <div class="container">
       <div class="calculator">
-        <div class="calculator__display">0</div>
-        <div class="calBtn">
-          <div class="calBtn__list">
+        <div class="calculator__display--for-advanced">0</div>
+        <div class="calculator__buttons">
+          <div class="clear__and__enter">
             <button class="clear">AC</button>
-
+            <button class="calculate">=</button>
+          </div>
+          <div class="button__row">
             <button class="number">7</button>
-
-            <button class="number">4</button>
-
-            <button class="number">1</button>
-
-            <button class="decimal">.</button>
-          </div>
-          <div class="calBtn__list">
-            <button class="clear">C</button>
-
             <button class="number">8</button>
-
-            <button class="number">5</button>
-
-            <button class="number">2</button>
-
-            <button class="number">0</button>
-          </div>
-          <div class="calBtn__list">
-            <button class="operator">+</button>
-
             <button class="number">9</button>
-
-            <button class="number">6</button>
-
-            <button class="number">3</button>
-
-            <button class="number">00</button>
+            <button class="operator">+</button>
           </div>
-          <div class="calBtn__list">
+          <div class="button__row">
+            <button class="number">4</button>
+            <button class="number">5</button>
+            <button class="number">6</button>
             <button class="operator">-</button>
-
+          </div>
+          <div class="button__row">
+            <button class="number">1</button>
+            <button class="number">2</button>
+            <button class="number">3</button>
+            <button class="operator">*</button>
+          </div>
+          <div class="button__row">
+            <button class="number double">0</button>
+            <button class="decimal">.</button>
             <button class="operator">/</button>
-
-            <button class="operator">X</button>
-
-            <button class="calculate equal">=</button>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+    <script src="JS/javaScript.js"></script>
   </body>
 </html>

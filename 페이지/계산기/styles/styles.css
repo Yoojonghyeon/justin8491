@@ -1,75 +1,77 @@
-/* 초기화 */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-ul {
-  list-style: none;
-}
-a {
-  text-decoration: none;
-}
-i {
-  color: rgb(59, 57, 57);
-  width: 32px;
-  height: 32px;
-}
-
-button {
-  font-size: 32px;
-}
-
-/* 배경 */
-.main {
+.container {
+  height: 100vh;
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
-
 .calculator {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 400px;
-  height: 600px;
-  background-color: darkgreen;
+  background-color: #cf7895;
+  width: 350px;
+  height: 500px;
+  border-radius: 10px;
+  padding: 10px 20px;
+  border: solid 6px #ffffff;
 }
-
-.calculator__display {
-  width: 100%;
+.calculator__display--for-advanced {
+  background-color: #dacccc;
   height: 100px;
+  width: 325px;
+  border-radius: 10px;
+  font-size: 30px;
   text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: chocolate;
-  font-size: 32px;
-  font-weight: bold;
+  vertical-align: middle;
+  padding: 25px 15px;
+  overflow: hidden;
+  overflow-wrap: break-word;
 }
-
-.calBtn {
-  padding-top: 20px;
-  display: flex;
-  flex-direction: row;
+.calculator__buttons {
+  background-color: #ffffff;
+  width: 335px;
+  height: 320px;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 25px;
 }
-
-.calBtn > div {
-  padding: 17.5px;
-  height: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.clear__and__enter {
+  text-align: center;
+  height: 50px;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: #ffffff;
 }
-
-.calBtn > div > button {
-  width: 64px;
-  height: 64px;
+.clear__and__enter > button {
+  border-radius: 10px;
+  width: 125px;
+  height: 50px;
+  margin: 0px 0px;
+  background-color: #f09393;
+  cursor: pointer;
+  outline: none;
+  border: 0px solid #30bb98;
 }
-
-.equal {
-  width: 64px;
-  height: 128px;
+.button__row {
+  border-radius: 10px;
+  text-align: center;
+  height: 50px;
+  margin: 10px;
+  background-color: #ffffff;
+}
+.button__row > button {
+  width: 60px;
+  height: 50px;
+  border-radius: 10px;
+  cursor: pointer;
+  outline: none;
+  background-color: #bdb2b2;
+}
+.button__row > .operator {
+  color: #ffffff;
+  background-color: #313132;
+}
+.button__row > .double {
+  width: 125px;
+}
+.button__row > .isPressed {
+  background-color: #00da75;
 }
