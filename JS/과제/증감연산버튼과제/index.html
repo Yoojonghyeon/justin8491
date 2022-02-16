@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>증감연산Javascript</title>
+    <style>
+      .display {
+        display: flex;
+        justify-content: center;
+        font-size: 300px;
+      }
+      .controller {
+        display: flex;
+        justify-content: center;
+      }
+      button {
+        width: 100px;
+        height: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="display">0</div>
+    <div class="controller">
+      <button class="plus">+</button> <button class="minus">-</button>
+    </div>
+    <script>
+      const display = document.querySelector(".display");
+      const plus = document.querySelector(".plus");
+      const minus = document.querySelector(".minus");
+
+      console.log(display);
+      plus.addEventListener("click", function (event) {
+        display.textContent = +display.textContent + +1;
+      });
+
+      minus.addEventListener("click", function (event) {
+        display.textContent = +display.textContent - +1;
+      });
+    </script>
+  </body>
+</html>
