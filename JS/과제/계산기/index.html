@@ -5,35 +5,166 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JS 계산기</title>
+    <!--  
+      2. 계산기 마크업을 간단하게
+        조건 1. 숫자 0 -> 9 버튼
+        조건 2. 결과가 표출되는 칸이 있어야한다.
+        조건 3. +, - ,/ ,* , =
+        조건 4. 초기화 버튼 -> 0으로
+
+        심화 1. 나머지 , 제곱 구하기
+        심화 2. 같은 버튼 누르면 계속 늘어나기  -->
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      button {
+        width: 80px;
+        height: 64px;
+        border-radius: 25px;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .calculater {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 400px;
+        height: 700px;
+        border: 3px solid black;
+      }
+
+      .container__display {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: cornflowerblue;
+        text-align: center;
+        width: 100%;
+        height: 100px;
+        font-size: 50px;
+        margin-bottom: 20px;
+        border-radius: 25px;
+      }
+
+      .button--list--row {
+        display: flex;
+        flex-direction: button--list--row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        width: 100%;
+        padding: 10px;
+      }
+
+      .calculate {
+        margin-top: 20px;
+        width: 100%;
+      }
+    </style>
   </head>
   <body>
     <!-- 0,1,2,3,4,5,6,7,8,9,/,*,-,+,= -->
     <div class="container">
-      <div class="container__display">0</div>
-      <div class="row">
-        <button class="num-7">7</button>
-        <button class="num-8">8</button><button class="num-9">9</button
-        ><button class="operator">+</button>
-      </div>
-      <div class="row">
-        <button class="num-4">4</button>
-        <button class="num-5">5</button><button class="num-6">6</button
-        ><button class="operator">-</button>
-      </div>
-      <div class="row">
-        <button class="num-1">1</button>
-        <button class="num-2">2</button><button class="num-3">3</button
-        ><button class="operator">*</button>
-      </div>
-      <div class="row">
-        <button></button>
-        <button class="num-0">0</button>
-        <button class="clear">C</button>
-        <button class="operator">/</button>
-      </div>
-      <div class="row">
-        <button class="calculate">=</button>
+      <div class="calculater">
+        <div class="container__display">0</div>
+        <div class="calculater__buttons">
+          <div class="button--list--row">
+            <button class="number">7</button>
+            <button class="number">8</button><button class="number">9</button
+            ><button class="operator">+</button>
+          </div>
+          <div class="button--list--row">
+            <button class="number">4</button>
+            <button class="number">5</button><button class="number">6</button
+            ><button class="operator">-</button>
+          </div>
+          <div class="button--list--row">
+            <button class="number">1</button>
+            <button class="number">2</button><button class="number">3</button
+            ><button class="operator">*</button>
+          </div>
+          <div class="button--list--row">
+            <button></button>
+            <button class="number">0</button>
+            <button class="clear">C</button>
+            <button class="operator">/</button>
+          </div>
+          <div class="button--list--row">
+            <button class="calculate">=</button>
+          </div>
+        </div>
       </div>
     </div>
+
+    <script>
+      const display = document.querySelector(".container__display");
+      const button = document.querySelector(".calculater__buttons");
+      const operator = document.querySelector(".operator");
+
+      let firstNum = "";
+      let lastNum = "";
+
+      function calculate(firstNum, operator, lastNum) {
+        let result = 0;
+        if (operator) {
+          if (operator === "+") {
+            result = firstNum + lastNum;
+          } else if (operator === "-") {
+            result = firstNum - lastNum;
+          } else if (operator === "*") {
+            result = firstNum * lastNum;
+          } else if (operator === "/") {
+            result = firstNum / lastNum;
+          }
+        }
+        return result;
+      }
+
+      button.addEventListener("click", function (event) {
+        let target = event.target;
+        let className = target.classList[0];
+        let operatorValue = "";
+        let lastKey = "";
+        //1. display.textContent 값이 0 이면서 operator 값이
+        // 없으면 firstNum으로 저장후 display에 출력
+
+        if (target.matches("button")) {
+          if (className === "number") {
+            if (display.textContent === "0" && operatorValue === "") {
+              //1. 첫 연산 숫자에 타깃 값을 넣는다.
+              firstNum = target.textContent;
+              //2. display에 타겟텍스트 값을 넣는다.
+              display.textContent = target.textContent;
+              //3. 마지막 키에 현재 display 값을 저장한다.
+              lastKey = display.textContent;
+            } else if (display.textContent !== "0" && operatorValue === "") {
+              firstNum += target.textContent;
+              display.textContent += target.textContent;
+            }
+          } else if (className === "operator") {
+            //1. 연산자 클릭시 숫자를 먼저 적지 않은 경우
+            if (display.textContent === "0") {
+              alert("숫자를 먼저 입력해주세요.");
+            } else if (display.textContent !== "0") {
+              //1. 숫자가 입력 되있는 경우 현재  display.textContent= '';
+              //2. operatorValue = target.textContext;
+              display.textContent = "";
+              operatorValue = target.textContext;
+            }
+          }
+
+          if (className === "calculate") {
+            display.textContent = calculate(firstNum, operatorValue, lastNum);
+            console.log(calculate(firstNum, operatorValue, lastNum));
+          }
+        }
+      });
+    </script>
   </body>
 </html>
