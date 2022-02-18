@@ -109,12 +109,14 @@
 
       let firstNum = "";
       let lastNum = "";
+      let operatorValue = "";
+      let lastKey = "";
 
       function calculate(firstNum, operator, lastNum) {
         let result = 0;
         if (operator) {
           if (operator === "+") {
-            result = firstNum + lastNum;
+            result = +firstNum + +lastNum;
           } else if (operator === "-") {
             result = firstNum - lastNum;
           } else if (operator === "*") {
@@ -130,44 +132,31 @@
         let target = event.target;
         let buttonContent = target.textContent;
         let className = target.classList[0];
-        let operatorValue = "";
-        let lastKey = "";
 
-        //1. display.textContent 값이 0 이면서 operator 값이
-        // 없으면 firstNum으로 저장후 display에 출력
+        //1. 저장하는 값의 기준은 항상 display로 한다.
+        //2.
         if (target.matches("button")) {
           if (className === "number") {
-            if (
-              display.textContent === "0" &&
-              operatorValue === "" &&
-              lastKey !== (className === "operator")
-            ) {
-              //1. 첫 연산 숫자에 타깃 값을 넣는다.
-              firstNum = buttonContent;
-              //2. display에 타겟텍스트 값을 넣는다.
-              display.textContent = firstNum;
-              //3. 마지막 키에 현재 display 값을 저장한다.
-              lastKey = display.textContent;
-
-              console.log(firstNum);
-              console.log(operatorValue);
-              console.log(lastNum);
-            } else if (display.textContent !== "0" && operatorValue === "") {
-              display.textContent = display.textContent + buttonContent;
-              firstNum = display.textContent;
-
-              console.log(firstNum);
-              console.log(operatorValue);
-              console.log(lastNum);
-            } else if (display.textContent !== "0" && operatorValue !== "") {
-              if (lastKey === operatorValue) {
-              }
-              //display 값이 0 이아니면서 operator 값이 존재할 경우 마지막키가
-              //operator 일때!
-              //1. lastKey 값이 operator 가 존재할 경우
+            if (display.textContent === "0" && operatorValue === "") {
+              //디스플레이에 버튼 클릭 콘텐츠를 담고
               display.textContent = buttonContent;
-              lastKey = display.textContent;
-              lastNum = display.textContent;
+              //첫번째 정수에 디스플레이 숫자를 저장
+              firstNum = display.textContent;
+            } else if (display.textContent !== "0" && operatorValue === "") {
+              //디스플레이값이 존재하고 operator 값이 없을 경우
+              display.textContent += buttonContent;
+              firstNum = display.textContent;
+            } else if (display.textContent !== "0" && operatorValue !== "") {
+              //display 값이 존재하고 operator 값이 존재할때
+              if (lastKey === operatorValue) {
+                //마지막키가 operator 일 경우()
+                display.textContent = buttonContent;
+                lastKey = display.textContent;
+                lastNum = display.textContent;
+              } else if (lastKey !== operatorValue) {
+                display.textContent += buttonContent;
+                lastNum = display.textContent;
+              }
             }
           } else if (className === "operator") {
             //1. 연산자 클릭시 숫자를 먼저 적지 않은 경우
@@ -182,15 +171,6 @@
             lastKey = display.textContent;
           }
 
-          if (className === "calculate") {
-            if (display.textContent !== "0" && operatorValue !== "") {
-              display.textContent = calculate(firstNum, operatorValue, lastNum);
-              console.log(firstNum);
-              console.log(operatorValue);
-              console.log(lastNum);
-            }
-          }
-
           if (className === "clear") {
             console.log("초기화");
             display.textContent = 0;
@@ -198,6 +178,37 @@
             operatorValue = "";
             lastNum = "";
             lastKey = "";
+          }
+
+          if (className === "calculate") {
+            if (firstNum !== "" && operatorValue === "") {
+              display.textContent = firstNum;
+            } else if (firstNum !== "" && lastNum === "") {
+              display.textContent = calculate(
+                display.textContent,
+                operatorValue,
+                display.textContent
+              );
+              console.log(
+                `'firstNum : '${firstNum},'Operator : '${operatorValue}, 'lastNum : '${lastNum}`
+              );
+            } else if (lastKey === display.textContent) {
+              display.textContent = calculate(firstNum, operatorValue, lastNum);
+              console.log(
+                `'firstNum : '${firstNum},'Operator : '${operatorValue}, 'lastNum : '${lastNum}`
+              );
+            } else if (lastKey !== display.textContent && lastKey !== "") {
+              display.textContent = calculate(
+                display.textContent,
+                operatorValue,
+                lastNum
+              );
+              console.log(
+                `'firstNum : '${firstNum},'Operator : '${operatorValue}, 'lastNum : '${lastNum}`
+              );
+            } else if (lastKey !== display.textContent && lastNum === "") {
+              display.textContent = firstNum;
+            }
           }
         }
       });
