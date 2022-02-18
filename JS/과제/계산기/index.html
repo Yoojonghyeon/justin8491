@@ -128,40 +128,76 @@
 
       button.addEventListener("click", function (event) {
         let target = event.target;
+        let buttonContent = target.textContent;
         let className = target.classList[0];
         let operatorValue = "";
         let lastKey = "";
+
         //1. display.textContent 값이 0 이면서 operator 값이
         // 없으면 firstNum으로 저장후 display에 출력
-
         if (target.matches("button")) {
           if (className === "number") {
-            if (display.textContent === "0" && operatorValue === "") {
+            if (
+              display.textContent === "0" &&
+              operatorValue === "" &&
+              lastKey !== (className === "operator")
+            ) {
               //1. 첫 연산 숫자에 타깃 값을 넣는다.
-              firstNum = target.textContent;
+              firstNum = buttonContent;
               //2. display에 타겟텍스트 값을 넣는다.
-              display.textContent = target.textContent;
+              display.textContent = firstNum;
               //3. 마지막 키에 현재 display 값을 저장한다.
               lastKey = display.textContent;
+
+              console.log(firstNum);
+              console.log(operatorValue);
+              console.log(lastNum);
             } else if (display.textContent !== "0" && operatorValue === "") {
-              firstNum += target.textContent;
-              display.textContent += target.textContent;
+              display.textContent = display.textContent + buttonContent;
+              firstNum = display.textContent;
+
+              console.log(firstNum);
+              console.log(operatorValue);
+              console.log(lastNum);
+            } else if (display.textContent !== "0" && operatorValue !== "") {
+              if (lastKey === operatorValue) {
+              }
+              //display 값이 0 이아니면서 operator 값이 존재할 경우 마지막키가
+              //operator 일때!
+              //1. lastKey 값이 operator 가 존재할 경우
+              display.textContent = buttonContent;
+              lastKey = display.textContent;
+              lastNum = display.textContent;
             }
           } else if (className === "operator") {
             //1. 연산자 클릭시 숫자를 먼저 적지 않은 경우
-            if (display.textContent === "0") {
+            if (display.textContent === "0" && operatorValue === "") {
               alert("숫자를 먼저 입력해주세요.");
             } else if (display.textContent !== "0") {
-              //1. 숫자가 입력 되있는 경우 현재  display.textContent= '';
-              //2. operatorValue = target.textContext;
-              display.textContent = "";
-              operatorValue = target.textContext;
+              operatorValue = buttonContent;
+              lastKey = operatorValue;
             }
+          } else if (lastKey !== operatorValue) {
+            display.textContent = display.textContent + buttonContent;
+            lastKey = display.textContent;
           }
 
           if (className === "calculate") {
-            display.textContent = calculate(firstNum, operatorValue, lastNum);
-            console.log(calculate(firstNum, operatorValue, lastNum));
+            if (display.textContent !== "0" && operatorValue !== "") {
+              display.textContent = calculate(firstNum, operatorValue, lastNum);
+              console.log(firstNum);
+              console.log(operatorValue);
+              console.log(lastNum);
+            }
+          }
+
+          if (className === "clear") {
+            console.log("초기화");
+            display.textContent = 0;
+            firstNum = "";
+            operatorValue = "";
+            lastNum = "";
+            lastKey = "";
           }
         }
       });
