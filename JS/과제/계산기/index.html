@@ -20,6 +20,8 @@
       }
 
       button {
+        font-size: 20px;
+        font-weight: bold;
         width: 80px;
         height: 64px;
         border-radius: 25px;
@@ -98,6 +100,10 @@
           <div class="button--list--row">
             <button class="calculate">=</button>
           </div>
+          <div class="button--list--row">
+            <button class="operator">^</button>
+            <button class="operator">%</button>
+          </div>
         </div>
       </div>
     </div>
@@ -123,6 +129,10 @@
             result = firstNum * lastNum;
           } else if (operator === "/") {
             result = firstNum / lastNum;
+          } else if (operator === "%") {
+            result = firstNum % lastNum;
+          } else if (operator === "^") {
+            result = Math.pow(firstNum, lastNum);
           }
         }
         return result;
@@ -133,8 +143,8 @@
         let buttonContent = target.textContent;
         let className = target.classList[0];
 
-        //1. 저장하는 값의 기준은 항상 display로 한다.
-        //2.
+        //저장하는 값의 기준은 항상 display로 한다.
+
         if (target.matches("button")) {
           if (className === "number") {
             if (display.textContent === "0" && operatorValue === "") {
@@ -184,6 +194,7 @@
             if (firstNum !== "" && operatorValue === "") {
               display.textContent = firstNum;
             } else if (firstNum !== "" && lastNum === "") {
+              //제곱
               display.textContent = calculate(
                 display.textContent,
                 operatorValue,
