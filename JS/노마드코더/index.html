@@ -8,24 +8,32 @@
     <title>Momentum</title>
   </head>
   <body>
-    <form class="hidden" id="login-form">
-      <input required maxlength="15" type="text" placeholder="ID" />
-      <input type="submit" value="로그인" />
-    </form>
-    <h2 id="clock">00:00:00</h2>
-    <h1 id="greeting" class="hidden"></h1>
-    <input class="remove hidden" type="submit" value="로그아웃" />
-    <form id="todo-form">
-      <input type="text" placeholder="할 일을 적어주세요" required />
-    </form>
-    <ul id="todo-list"></ul>
-    <div id="quote">
-      <span></span>
-      <span></span>
-    </div>
-    <div id="weather">
-      <span></span>
-      <span></span>
+    <div class="body-container">
+      <form class="hidden" id="login-form">
+        <input
+          class="login-form__id"
+          required
+          maxlength="15"
+          type="text"
+          placeholder="ID"
+        />
+        <input class="login-form__id-btn" type="submit" value="로그인" />
+      </form>
+      <h2 id="clock">00:00:00</h2>
+      <h1 id="greeting" class="hidden"></h1>
+      <input class="remove hidden" type="submit" value="🔚" />
+      <form id="todo-form">
+        <input type="text" placeholder="할 일을 적어주세요" required />
+      </form>
+      <ul id="todo-list"></ul>
+      <div id="weather">
+        <span></span>
+        <span></span>
+      </div>
+      <div id="quote">
+        <span></span>
+        <span></span>
+      </div>
     </div>
 
     <script src="js/greetings.js"></script>
