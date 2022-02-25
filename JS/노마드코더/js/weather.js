@@ -12,7 +12,7 @@ function onGeoOK(position) {
       const weather = document.querySelector("#weather span:first-child");
       const city = document.querySelector("#weather span:last-child");
       city.innerText = data.name;
-      weather.innerText = `${wDescEngToKor(data.weather[0].id)} / ${Math.round(
+      weather.innerText = `${wDescEngToKor(data.weather[0].id)} /  ${Math.round(
         data.main.temp
       )}`;
     });

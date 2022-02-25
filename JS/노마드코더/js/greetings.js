@@ -18,7 +18,7 @@ function onLoginSubmit(event) {
 function paintGreetings(username) {
   greeting.innerText = `Welcome ${username}`;
   greeting.classList.remove(HIDDEN_CLASSNAME);
-  removeBtn.classList.remove(HIDDEN_CLASSNAME);
+  //removeBtn.classList.remove(HIDDEN_CLASSNAME);
 }
 
 const savedUsername = localStorage.getItem(USERNAME_KEY);
@@ -30,12 +30,12 @@ if (savedUsername === null) {
 } else {
   //h1을 보여줌
   paintGreetings(savedUsername);
-  removeBtn.classList.remove(HIDDEN_CLASSNAME);
+  //removeBtn.classList.remove(HIDDEN_CLASSNAME);
 }
 
-function removeStorage() {
-  localStorage.removeItem(USERNAME_KEY);
-  window.location.reload();
-}
+// function removeStorage() {
+//   localStorage.removeItem(USERNAME_KEY);
+//   window.location.reload();
+// }
 
-removeBtn.addEventListener("click", removeStorage);
+//removeBtn.addEventListener("click", removeStorage);
