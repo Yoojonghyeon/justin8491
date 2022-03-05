@@ -8,38 +8,63 @@
   </head>
   <body>
     <script>
-      function job1() {
+      // promise(resolve, reject)
+      // const f1 = () => {
+      //   return new Promise((res, rej) => {
+      //     setTimeout(() => {
+      //       res("1번 주문 완료");
+      //     }, 1000);
+      //   });
+      // };
+      // const f2 = (message) => {
+      //   console.log(message);
+      //   return new Promise((res, rej) => {
+      //     setTimeout(() => {
+      //       rej("xxx");
+      //     }, 2000);
+      //   });
+      // };
+      // const f3 = (message) => {
+      //   console.log(message);
+      //   return new Promise((res, rej) => {
+      //     setTimeout(() => {
+      //       res("3번 주문 완료");
+      //     }, 3000);
+      //   });
+      // };
+      // 콜백 지옥
+      //console.log("시작");
+      // f1(function () {
+      //   f2(function () {
+      //     f3(function () {
+      //       console.log("끝");
+      //     });
+      //   });
+      // });
+
+      function statusList() {
         return new Promise(function (resolve, reject) {
-          setTimeout(function () {
-            resolve("job1 ok!");
-          }, 2000);
-        });
-      }
-      function job2() {
-        return new Promise(function (resolve, reject) {
-          setTimeout(function () {
-            resolve("job2 ok!");
-          }, 2000);
+          reject(new Error("받아오기 실패"));
         });
       }
 
-      // job1.then(function (data) { // 프라미스 네이스틱 방식 // 보통 체이닝 방식 선호
-      //   console.log("data1", data);
-      //   job2().then(function (data) {
-      //     console.log("data2", data);
-      //   });
-      // });
-      job1()
-        .then(function (data) {
-          console.log("data1", data);
-        })
-        .catch(function (reason) {
-          console("reason", reason);
-          return Promise.reject(reason);
-        })
-        .then(function (data) {
-          console.log("data2", data);
+      statusList()
+        .then()
+        .catch(function (err) {
+          console.log(err);
         });
+
+      //프라미스 체이닝 방식]
+      //장점: 가독성이 뛰어남
+      // console.log("시작");
+      // f1()
+      //   .then((res) => f2(res))
+      //   .then((res) => f3(res))
+      //   .then((res) => console.log(res))
+      //   .catch(console.log)
+      //   .finally(() => {
+      //     console.log("끝");
+      //   });
     </script>
   </body>
 </html>
