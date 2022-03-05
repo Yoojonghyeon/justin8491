@@ -8,13 +8,38 @@
   </head>
   <body>
     <script>
-      console.log("1");
-      console.log("2");
-      setTimeout(function () {
-        console.log("3");
-      }, 5000);
-      console.log("4");
-      console.log("5");
+      function job1() {
+        return new Promise(function (resolve, reject) {
+          setTimeout(function () {
+            resolve("job1 ok!");
+          }, 2000);
+        });
+      }
+      function job2() {
+        return new Promise(function (resolve, reject) {
+          setTimeout(function () {
+            resolve("job2 ok!");
+          }, 2000);
+        });
+      }
+
+      // job1.then(function (data) { // 프라미스 네이스틱 방식 // 보통 체이닝 방식 선호
+      //   console.log("data1", data);
+      //   job2().then(function (data) {
+      //     console.log("data2", data);
+      //   });
+      // });
+      job1()
+        .then(function (data) {
+          console.log("data1", data);
+        })
+        .catch(function (reason) {
+          console("reason", reason);
+          return Promise.reject(reason);
+        })
+        .then(function (data) {
+          console.log("data2", data);
+        });
     </script>
   </body>
 </html>
