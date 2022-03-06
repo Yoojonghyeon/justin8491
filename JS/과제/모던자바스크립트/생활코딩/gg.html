@@ -19,7 +19,8 @@
         console.log(message);
         return new Promise((res, rej) => {
           setTimeout(() => {
-            rej(new Error("xx"));
+            res("2번 주문 완료");
+            //rej(new Error("err.."));
           }, 3000);
         });
       };
@@ -65,11 +66,39 @@
       //Promise.race(.all과 비슷하다)
       //용량이 큰이미지를 업로드 할때 하나라도
       //업로드 완료시 띄워줄때 사용하는 방식
-      console.time("x");
-      Promise.race([f1(), f2(), f3()]).then((res) => {
-        console.log(res);
-        console.timeEnd("x");
-      });
+      // console.time("x");
+      // Promise.race([f1(), f2(), f3()]).then((res) => {
+      //   console.log(res);
+      //   console.timeEnd("x");
+      // });
+
+      //async 방식
+      // console.log("시작");
+      // async function order() {
+      //   try {
+      //     const result1 = await f1();
+      //     const result2 = await f2(result1);
+      //     const result3 = await f3(result2);
+      //     console.log(result3);
+      //   } catch (e) {
+      //     console.log(e);
+      //   }
+      //   console.log("종료");
+      // }
+      // order();
+
+      //promise.all async
+      console.log("시작");
+      async function order() {
+        try {
+          const result = await Promise.all([f1(), f2(), f3()]);
+          console.log(result);
+        } catch (e) {
+          console.log(e);
+        }
+        console.log("종료");
+      }
+      order();
     </script>
   </body>
 </html>
