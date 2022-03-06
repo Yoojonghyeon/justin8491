@@ -8,32 +8,31 @@
   </head>
   <body>
     <script>
-      // promise(resolve, reject)
-      // const f1 = () => {
-      //   return new Promise((res, rej) => {
-      //     setTimeout(() => {
-      //       res("1번 주문 완료");
-      //     }, 1000);
-      //   });
-      // };
-      // const f2 = (message) => {
-      //   console.log(message);
-      //   return new Promise((res, rej) => {
-      //     setTimeout(() => {
-      //       rej("xxx");
-      //     }, 2000);
-      //   });
-      // };
-      // const f3 = (message) => {
-      //   console.log(message);
-      //   return new Promise((res, rej) => {
-      //     setTimeout(() => {
-      //       res("3번 주문 완료");
-      //     }, 3000);
-      //   });
-      // };
-      // 콜백 지옥
-      //console.log("시작");
+      const f1 = () => {
+        return new Promise((res, rej) => {
+          setTimeout(() => {
+            res("1번 주문 완료");
+          }, 1000);
+        });
+      };
+      const f2 = (message) => {
+        console.log(message);
+        return new Promise((res, rej) => {
+          setTimeout(() => {
+            rej(new Error("xx"));
+          }, 3000);
+        });
+      };
+      const f3 = (message) => {
+        console.log(message);
+        return new Promise((res, rej) => {
+          setTimeout(() => {
+            res("3번 주문 완료");
+          }, 2000);
+        });
+      };
+      //콜백 지옥
+      // console.log("시작");
       // f1(function () {
       //   f2(function () {
       //     f3(function () {
@@ -42,29 +41,35 @@
       //   });
       // });
 
-      function statusList() {
-        return new Promise(function (resolve, reject) {
-          reject(new Error("받아오기 실패"));
-        });
-      }
-
-      statusList()
-        .then()
-        .catch(function (err) {
-          console.log(err);
-        });
-
-      //프라미스 체이닝 방식]
+      // Promises Chaining(프로미스 체이닝 방식)
       //장점: 가독성이 뛰어남
-      // console.log("시작");
+      // console.time("시작");
       // f1()
       //   .then((res) => f2(res))
       //   .then((res) => f3(res))
       //   .then((res) => console.log(res))
       //   .catch(console.log)
       //   .finally(() => {
-      //     console.log("끝");
+      //     console.timeEnd("시작");
       //   });
+
+      // Promise.all(프라미스 올 방식)
+      // 빠른 실행속도
+      // 정상적으로 실행 됐을 때만 출력
+      // console.time("x");
+      // Promise.all([f1(), f2(), f3()]).then((res) => {
+      //   console.log(res);
+      //   console.timeEnd("x");
+      // });
+
+      //Promise.race(.all과 비슷하다)
+      //용량이 큰이미지를 업로드 할때 하나라도
+      //업로드 완료시 띄워줄때 사용하는 방식
+      console.time("x");
+      Promise.race([f1(), f2(), f3()]).then((res) => {
+        console.log(res);
+        console.timeEnd("x");
+      });
     </script>
   </body>
 </html>
