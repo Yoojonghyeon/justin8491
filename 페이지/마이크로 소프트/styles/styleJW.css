@@ -1,3 +1,4 @@
+/*확인 */
 /* css 작성시 같은 섹션안에 있는 css는 모아주기 */
 /* 또한 부모 -> 자식 순으로 스타일링 */
 
@@ -7,6 +8,11 @@
   padding: 0;
   /* 해당 속성 무엇인지 알아보기! */
   box-sizing: border-box;
+  /* box-sizing : borderbox 
+  - 지정한 위치, 넓이 값까지만 늘려주고 나머지 값은 버려지게끔 지정하는 값
+  - 테두리 포함 크기 지정값
+  - 크기를 예측 하기 쉬워짐
+  */
 }
 ul {
   list-style: none;
@@ -15,17 +21,24 @@ a {
   text-decoration: none;
 }
 
+/* img-size */
+
 /* nav */
 .top-list {
   display: flex;
   flex-direction: row;
   /* 이게 뭔지 알아보기 그리고 flex쓸때 같이 써주기 */
   flex-wrap: nowrap;
+  /* flex-wrap {
+    - 영역 안에서만 늘어나게 할것인지 영역 밖으로 늘어나도록 
+    할것인지 지정 가능
+    - reverse(거꾸로 지정 가능)
+    
+     */
   justify-content: space-between;
   align-items: center;
 
   /* margin 말고 padding 사용할것 */
-  padding: 0 100px;
 }
 
 /* padding 으로 사용하면 backgoround-image 줄때 padding 상관없이 영역을 먹어 */
@@ -35,6 +48,15 @@ nav, main, footer {
 }
 공통으로 사용가능 !
 */
+
+nav,
+main {
+  padding: 0 100px;
+}
+
+.Logo {
+  display: flex;
+}
 
 .top-list__left {
   display: flex;
@@ -71,7 +93,7 @@ nav, main, footer {
 .top-list__left > ul > li > a {
   color: black;
   /* em, rem , % 단위가 무엇인지 알아보기 */
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: bold;
 }
 
@@ -89,4 +111,268 @@ nav, main, footer {
   /*  */
   display: flex;
   align-items: center;
+}
+
+.top-list__right > li > span {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+/* main-slied */
+.main-slied {
+  display: flex;
+  background-image: url(https://www.wallpapertip.com/wmimgs/29-296024_3d-white-wallpaper-hd.jpg);
+  width: 100%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: nowrap;
+  padding-left: 3em;
+}
+
+.main-slied > p {
+  padding: 30px 30px 30px 0px;
+}
+
+.now-showping {
+  background-color: black;
+  color: aliceblue;
+  padding: 8px;
+  width: 140px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.main-slied__container__swich {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.main-slied__container__swich > img {
+  width: 16px;
+  height: 16px;
+}
+/* fast */
+.fast {
+  display: flex;
+  justify-content: center;
+  padding: 80px 350px 80px 350px;
+}
+
+.fast-menu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 0px;
+}
+
+.fast-menu > ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.fast-menu > ul > li {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin: 0 30px;
+  width: 100px;
+}
+
+.fast-menu > ul > li > a {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.fast-menu > ul > li > a > p {
+  text-align: center;
+}
+/* going1 */
+.going {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.going-menu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  padding-bottom: 50px;
+}
+
+.going-menu__item {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.going-menu__item > img {
+  width: 360px;
+  height: 200px;
+}
+
+.going-menu__item__size {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 360px;
+}
+
+.going-menu__item__size > h3 {
+  padding-top: 20px;
+}
+
+.going-menu__item__size > p {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.going-menu__item__size > a {
+  padding-bottom: 5px;
+}
+
+/* sub-main */
+.sub-main {
+  display: flex;
+  background-image: url(https://img.29cm.co.kr/next-brand/2021/03/12/691cba2068564122a8d8a7152db4a523_20210312154025.jpg?width=1200);
+  width: 100%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: nowrap;
+  padding-left: 3em;
+}
+
+.sub-main__container > p {
+  padding: 30px 30px 30px 0px;
+}
+
+/* going2 */
+.going2 {
+  padding-top: 100px;
+}
+
+/* social */
+.social {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-size: 15px;
+}
+
+.social__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30px;
+}
+
+.social > div > a > img {
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+}
+
+/* footer-container__nav */
+.footer-container {
+  background-color: #e2e2e2;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding: 50px;
+}
+
+.footer-container__nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.footer-container__block {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.footer-container__block > h3 {
+  color: gray;
+  font-size: 15px;
+}
+
+.footer-container__block__list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding-top: 10px;
+}
+
+.footer-container__block__list > li {
+  padding-top: 10px;
+}
+
+.footer-container__block__list > li > a {
+  color: gray;
+  font-size: 15px;
+}
+
+/* information */
+.information {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding-top: 50px;
+  font-size: 15px;
+  color: gray;
+}
+
+.information__nationality {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.information__nationality > i {
+  margin-right: 10px;
+}
+
+.information__info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.information__info__list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.information__info__list__item {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  color: gray;
+}
+
+.information__info__list__item > a {
+  color: gray;
+  margin-left: 40px;
 }
